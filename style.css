@@ -1,33 +1,37 @@
-/* Overall Layout */
-* {
-    box-sizing: border-box;
+/* Header Image and Profile Picture */
+.header {
+    position: relative;
+    text-align: center;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f8fa;
-    color: #333;
-    margin: 0;
-    display: flex;
+.header-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
-.sidebar {
-    width: 220px;
-    background-color: #f3f4f6;
-    padding: 20px;
-    position: fixed;
-    height: 100vh;
-    overflow-y: auto;
-    border-right: 1px solid #e0e0e0;
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    position: absolute;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar h2 {
-    font-size: 1.6em;
-    color: #4a4a4a;
+/* Adjustments for Content Section after adding header */
+.content {
+    margin-top: 200px;
 }
 
+/* Icon and Link Styling in Sidebar */
 .sidebar nav a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 10px;
     font-size: 1em;
     color: #4a90e2;
@@ -36,80 +40,13 @@ body {
     transition: background 0.3s;
 }
 
-.sidebar nav a:hover {
-    background-color: #e5eaf0;
-    color: #1a73e8;
-}
-
-.content {
-    margin-left: 240px;
-    padding: 20px 40px;
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-/* Header */
-header h1 {
-    font-size: 2.2em;
-    font-weight: 600;
-    margin: 0;
-    color: #2f4f4f;
-}
-
-header p {
-    font-size: 1.1em;
-    color: #555;
-    margin: 5px 0;
-}
-
-/* Section Titles */
-section h2 {
-    font-size: 1.8em;
-    color: #4a90e2;
-    margin-top: 30px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-}
-
-/* List styling */
-ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-ul li {
-    font-size: 1em;
-}
-
-/* Link Styling */
-a {
-    color: #4a90e2;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #1c6ea4;
-}
-
-/* Job Experience */
-.job h3 {
+.sidebar nav a i {
     font-size: 1.2em;
-    color: #333;
-    margin: 15px 0 5px;
 }
 
-.job p {
-    font-size: 0.95em;
-    color: #777;
-    margin: 5px 0;
-}
-
-/* Subtle hover effect for sections */
-section {
-    padding: 10px 0;
-    transition: background-color 0.2s;
-}
-
-section:hover {
-    background-color: #f9f9f9;
+/* Section Titles with Icons */
+section h2 i {
+    color: #4a90e2;
+    margin-right: 8px;
+    font-size: 1.2em;
 }
