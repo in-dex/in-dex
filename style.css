@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
@@ -20,21 +20,21 @@ body {
     height: 100vh;
     width: 60px; /* Minimized width */
     background-color: #333;
-    overflow-x: hidden;
-    transition: width 0.3s;
-    padding-top: 20px;
     color: white;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    padding-top: 20px;
+    padding-left: 10px;
 }
 
 .sidebar:hover {
-    width: 250px; /* Expanded width on hover */
+    width: 250px; /* Expanded width */
 }
 
-/* Sidebar Content */
 .sidebar h2 {
     text-align: center;
     font-size: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 20px;
     display: none; /* Hidden in minimized state */
 }
 
@@ -45,10 +45,10 @@ body {
 .sidebar nav a {
     display: flex;
     align-items: center;
-    font-size: 0.9em;
+    font-size: 1em;
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px;
     white-space: nowrap;
     transition: background 0.3s;
 }
@@ -60,8 +60,8 @@ body {
 /* Sidebar Icon Styling */
 .sidebar nav a:before {
     content: "•";
-    margin-right: 10px;
-    font-size: 1.2em;
+    margin-right: 15px;
+    font-size: 1.5em;
 }
 
 .sidebar:hover nav a span {
@@ -77,7 +77,7 @@ body {
     margin-left: 60px; /* Adjust based on sidebar width */
     padding: 20px;
     width: calc(100% - 60px); /* Ensures content takes up the remaining space */
-    transition: margin-left 0.3s;
+    transition: margin-left 0.3s ease;
 }
 
 .sidebar:hover ~ .content {
