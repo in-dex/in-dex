@@ -1,115 +1,161 @@
-/* Reset styles */
+/* Reset some basic styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Basic Layout */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
 }
 
-/* Floating Sidebar */
-.sidebar {
-    position: fixed;
+/* Navigation Styling */
+#navbar {
+    position: sticky;
     top: 0;
-    left: 0;
-    height: 100vh;
-    width: 60px; /* Minimized width */
     background-color: #333;
-    color: white;
-    overflow-x: hidden;
-    transition: width 0.3s ease;
-    padding-top: 20px;
-    padding-left: 10px;
+    padding: 15px 0;
+    z-index: 1000;
 }
 
-.sidebar:hover {
-    width: 250px; /* Expanded width */
-}
-
-.sidebar h2 {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 20px;
-    display: none; /* Hidden in minimized state */
-}
-
-.sidebar:hover h2 {
-    display: block; /* Show title when expanded */
-}
-
-.sidebar nav a {
+#navbar nav ul {
     display: flex;
-    align-items: center;
-    font-size: 1em;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar nav ul li {
+    margin: 0 20px;
+}
+
+#navbar nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px;
-    white-space: nowrap;
-    transition: background 0.3s;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-.sidebar nav a:hover {
-    background-color: #575757;
+#navbar nav ul li a:hover {
+    color: #f77f00;
 }
 
-/* Sidebar Icon Styling */
-.sidebar nav a:before {
-    content: "•";
-    margin-right: 15px;
-    font-size: 1.5em;
-}
-
-.sidebar:hover nav a span {
-    display: inline; /* Show text when expanded */
-}
-
-.sidebar nav a span {
-    display: none; /* Hide text when minimized */
-}
-
-/* Main Content Area */
-.content {
-    margin-left: 60px; /* Adjust based on sidebar width */
-    padding: 20px;
-    width: calc(100% - 60px); /* Ensures content takes up the remaining space */
-    transition: margin-left 0.3s ease;
-}
-
-.sidebar:hover ~ .content {
-    margin-left: 250px; /* Adjust margin when sidebar expands */
-}
-
-/* Header Image and Profile Picture */
-.header {
+/* Hero Section */
+.hero-section {
     position: relative;
+    height: 100vh;
+    background: url('path/to/your/image.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     text-align: center;
-    margin-bottom: 60px;
 }
 
-.header-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #ffffff;
-    position: absolute;
-    bottom: -75px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-/* Section styling */
-section {
-    margin-bottom: 40px;
+.hero-content .btn {
+    padding: 10px 20px;
+    background-color: #f77f00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero-content .btn:hover {
+    background-color: #f56d00;
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.projects-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .about-section h2,
+    .projects-section h2,
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    #navbar nav ul {
+        flex-direction: column;
+    }
+
+    #navbar nav ul li {
+        margin: 10px 0;
+    }
 }
