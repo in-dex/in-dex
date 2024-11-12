@@ -1,9 +1,7 @@
-/* style.css */
-
 /* Overall Layout */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa;
     color: #333;
     margin: 0;
     padding: 0;
@@ -15,59 +13,68 @@ body {
     max-width: 800px;
     margin: 40px 20px;
     background: white;
-    padding: 20px;
+    padding: 20px 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
 }
 
 /* Header */
-h1 {
+header h1 {
     font-size: 2.5em;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin: 0;
     color: #2f4f4f;
 }
 
-p {
+header p {
     font-size: 1.1em;
-    line-height: 1.6;
     color: #555;
+    margin: 5px 0;
 }
 
-/* Project Links */
+/* Section Titles */
+section h2 {
+    font-size: 1.8em;
+    color: #4a90e2;
+    margin-top: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+section p, ul, li {
+    margin: 10px 0;
+}
+
+/* Job Experience */
+.job h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 15px 0 5px;
+}
+
+.job p {
+    font-size: 0.95em;
+    color: #777;
+    margin: 5px 0;
+}
+
+/* List styling */
 ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: square;
+    padding-left: 20px;
 }
 
 ul li {
-    margin: 10px 0;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
-ul li a {
+/* Links */
+a {
     color: #4a90e2;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-ul li a:hover {
+a:hover {
     color: #1c6ea4;
-}
-
-/* Contact Link */
-.contact-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4a90e2;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.contact-link:hover {
-    background-color: #1c6ea4;
 }
