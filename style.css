@@ -1,50 +1,87 @@
-/* Overall page layout */
-body {
-    display: flex;
+/* Reset */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Sidebar styling */
+/* Basic Layout */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #f9f9f9;
+}
+
+/* Floating Sidebar */
 .sidebar {
-    width: 250px;
-    height: 100vh; /* Full viewport height */
-    background-color: #f4f4f4;
-    padding: 20px;
-    position: fixed; /* Makes the sidebar fixed */
+    position: fixed;
     top: 0;
     left: 0;
-    overflow-y: auto; /* Allows scrolling if content exceeds viewport */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    width: 60px; /* Minimized width */
+    background-color: #333;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    padding-top: 20px;
+    color: white;
 }
 
+.sidebar:hover {
+    width: 250px; /* Expanded width on hover */
+}
+
+/* Sidebar Content */
 .sidebar h2 {
     text-align: center;
-    color: #4a90e2;
+    font-size: 1em;
+    margin-bottom: 1em;
+    display: none; /* Hidden in minimized state */
+}
+
+.sidebar:hover h2 {
+    display: block; /* Show title when expanded */
 }
 
 .sidebar nav a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px;
-    font-size: 1em;
-    color: #4a90e2;
+    font-size: 0.9em;
+    color: white;
     text-decoration: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    white-space: nowrap;
     transition: background 0.3s;
 }
 
 .sidebar nav a:hover {
-    background-color: #e0e7ff;
+    background-color: #575757;
 }
 
-/* Main content area */
+/* Sidebar Icon Styling */
+.sidebar nav a:before {
+    content: "•";
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.sidebar:hover nav a span {
+    display: inline; /* Show text when expanded */
+}
+
+.sidebar nav a span {
+    display: none; /* Hide text when minimized */
+}
+
+/* Main Content Area */
 .content {
-    margin-left: 270px; /* Adjust based on sidebar width */
+    margin-left: 60px; /* Adjust based on sidebar width */
     padding: 20px;
-    width: calc(100% - 270px); /* Ensures content takes up the remaining space */
-    box-sizing: border-box;
+    width: calc(100% - 60px); /* Ensures content takes up the remaining space */
+    transition: margin-left 0.3s;
+}
+
+.sidebar:hover ~ .content {
+    margin-left: 250px; /* Adjust margin when sidebar expands */
 }
 
 /* Header Image and Profile Picture */
@@ -72,14 +109,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Section Titles with Icons */
-section h2 i {
-    color: #4a90e2;
-    margin-right: 8px;
-    font-size: 1.2em;
-}
-
-/* Basic content styling */
-header, section {
+/* Section styling */
+section {
     margin-bottom: 40px;
 }
